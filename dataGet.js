@@ -1,0 +1,62 @@
+var data_backup = [
+{
+"title":"Introduction to PTC Tech Support",
+"video":"https://drive.google.com/file/d/1G9ir68E9F6OiV6BFh5A8uXTqWyfutm4q/view?usp=sharing",
+"transcript":"Today, I will tell you about the PTC tech support. Tech support is a new service offered by the PTC. To access the tech support wiki, you have to log in to ncvps.instructure.com and once you've done that, you have to go to Peer Tutoring Center Tech Support and then click on this green apple and this is the tech support wiki. Tech Support can teach you to do something that you have trouble with or that you never knew before. You can get volunteer hours if you make videos that can help either peer tutors or tutees. You can make the videos by logging in to media.ncvps.org. You can get the login info if you receive permission to start making the video. Click add new and then click on CaptureSpace Lite. Once you have done that, you have to download CaptureSpace and I have already downloaded it and then, once you have downloaded it, you will get a notification like this. Click yes and you can start recording."
+},
+{
+"title":"NCVPS PTC Tech Support",
+"video":"https://drive.google.com/file/d/1GZZQ7UXlPPMylS24h2X3f6O53xOgoADc/view?usp=sharing",
+"transcript":"NCVPS PTC Tech Support. A little bit about me... I joined the PTC last Summer to help students be successful in their online class. I was already tutoring my friends and family so I thought I would take it to the next level by tutoring other students from across the state. What is the PTC Tech Support Program? This service will focus on helping students solve any technology issues that they are experiencing therefore allowing them to be more successful in their online class. It becomes increasingly frustrating for a student, if they have done all the work and know the concepts, but just cannot find out how to submit their assignment in canvas. This service was designed with that purpose in mind... We want to break the technology hurdle, and provide students with the necessary resources and skills to be successful in their course. To accomplish this goal, we are creating videos, with each focusing on a specific topic. Sample video link: goo.gl/7ideew Please join us!"
+},
+{
+"title":"Introduction to PTC Writing Center",
+"video":"https://drive.google.com/file/d/11Lp0If9e8KyCoeQXOR_eAR1d0b7OyJRd/view?usp=sharing",
+"transcript":"Hello! In this video, I will show you how to submit an essay for feedback on the PTC writing center. Let's say that this is the essay that needs feedback and the deadline is in two days. The first way you can submit this is by going to modules and clicking on the 48 hour submission link. You can also click on the 24 hour one if you need feedback faster. The other way you can do this is by scrolling down and clicking on the one you need. So, I click on the 48 hour one and I upload my essay. Then, I just click here. Once you do that, there is an essay submission form and all this is for is so that the tutor grading your essay knows exactly what you want help on. After doing that, you are able to get more personalized feedback based on what you actually need for your class. Once a tutor gives you feedback on your essay, you'll get a notification like on the canvas app. You'll just click on the grades tab, on your submission, and then you'll just move to the right and click on view feedback. As you can tell, the feedback has fixed a spelling mistake and says to go check out another module in the writing center that will help make this essay better. So, where's that? It's in the modules. Now, all you need to do is scroll down. Some of them talk about building a better essay, citations,  and writing styles. You can review these depending on your feedback or on what you think you need to get better at. After all that, there's only one thing left to do and that is deciding on how much the PTC writing center helped you. Even though it is not required, you can submit feedback at this link to help us make the writing center better. That's it! Good luck on your essays!"
+},
+{
+"title":"NCVPS PTC Writing Center Promo Video - Student",
+"video":"https://drive.google.com/file/d/1JLTdM3Xn5Frg74Ixj0IXGQYKhG8eYwSv/view?usp=sharing",
+"transcript":"North Carolina Virtual Public School NCVPS Peer Tutoring Center presents The PTC Writing Center a tutor-led center dedicated to helping students improve their writing. You can: submit essays for review by our peer tutors (24 or 48 hours return time), view writing guides, explanations, and practice to help improve your writing, view grammar guides and other internet resources, view example essays to reinforce concepts and improve application of skills. The center will be staffed by peer tutors dedicated to helping you improve your writing. Questions? ptcwritingcenter@ncpublicschools.gov So what are you waiting for!? Go to: https://ncvps.instructure.com/enroll/hf8CL8"
+},
+{
+"title":"NCVPS PTC Writing Center Promo Video - Tutor",
+"video":"https://drive.google.com/file/d/1Dv_tRHuF3rVjAG6QHdWC1VWBR-8dPwEd/view?usp=sharing",
+"transcript":"North Carolina Virtual Public School NCVPS Peer Tutoring Center presents The PTC Writing Center a tutor-led center dedicated to helping students improve their writing. Tutors should: review essays submitted by students and return according to return time submitted (24 hours or 48 hours), add/improve writing guides, explanations, and practice links to help students improve their writing, add/improve grammar guides and other internet resources for students to use, ad/improve example essays to help students reinforce concepts and improve applications of skills, be available to help in the center and make immediate changes or revisions as needed. Questions? ptcwritingcenter@ncpublicschools.gov Please go to the training modules and complete the writing center training. Thanks for all your help!"
+},
+{
+"title":"PTC Video and Audio Recording",
+"video":"https://drive.google.com/file/d/1QUY5k2yQA8eeM2hXZE9StaoZ5vPRSS5n/view?usp=sharing",
+"transcript":""
+},
+{
+"title":"Responding to Discussion Board Posts",
+"video":"https://drive.google.com/file/d/11PclaR2yQtCLsO0kRUb9CBtfxaJRWXVM/view?usp=sharing",
+"transcript":"In this video, we'll explain how to respond to a discussion board post for an NCVPS course. First, pull up the discussion post you wish to complete. [inaudible] because the assignment will be relative to your class, my screen may look different, but the process for responding to a post will be the same. Once you have pulled up your assignment and have read the directions, scroll down to the reply button. Click on it and you'll see a text box where you can complete your response. After completing your response, click the post reply button. You will then see that your response has been added to the discussion. I hope this video helped you understand how to complete a discussion post for your NCVPS class."
+},
+{
+"title":"Viewing Teacher Announcements",
+"video":"https://drive.google.com/file/d/1O_iSVZaxO4FZLHJddVHjrhDc2N2TI-1T/view?usp=sharing",
+"transcript":"In this video, we'll explain how to view teacher announcements for courses. To begin, log in to your NCVPS dashboard through the link ncvps.instructure.com. Upon logging in, you'll see a page similar to mine. To view announcements for the course, first click on the course title. This will take you to the home page of that course. You will see your most recent announcements at the top of the page. To see more announcements, though, click on the announcements page. This will show you the list of announcements by the teacher of this course. To view an individual announcement and its contents, click on the title. I hope this tutorial helped you understand how to view teacher announcements."
+},
+{
+"title":"Clearing Cache in Google Chrome",
+"video":"https://drive.google.com/open?id=1ySoItgcviZ6qG72GKMRq2GJTPky3aPFV",
+"transcript":"Today, you are going to be learning how to clear cache in Google Chrome. The easiest way to do this is to clear the local cache by pressing control shift j. This opens the JavaScript console. From here, you need to make sure this is set on laptop since that's the average screen size for the device that you will be using for your courses, but if you have a larger laptop, you will probably want to press laptop large, if you have a tablet, you will want to press tablet, and if you have a mobile device, you will want to press either mobile large, mobile medium, or mobile small. So, for this one, we are just going to click laptop since that's the size of my device. With this, you then press and hold the reload button and click empty cache and hard reload. Then, to continue your course, you'll want to exit out of the JavaScript console. Sometimes, though, administrators block this due to security reasons. Then, you'll want to press control h. From here, you click clear browsing data. Make sure that cached images and files is clicked and make sure that the time range is all time. Then you'll click clear data and then, your cache will be cleared so that you can use any program that needs the cache to be cleared so it will actually work. And that's how you clear cache on Google Chrome."
+}
+]
+"title":"Responding to Discussion Board Posts",
+"video":"https://drive.google.com/file/d/11PclaR2yQtCLsO0kRUb9CBtfxaJRWXVM/view?usp=sharing",
+"transcript":"In this video, we'll explain how to respond to a discussion board post for an NCVPS course. First, pull up the discussion post you wish to complete. [inaudible] because the assignment will be relative to your class, my screen may look different, but the process for responding to a post will be the same. Once you have pulled up your assignment and have read the directions, scroll down to the reply button. Click on it and you'll see a text box where you can complete your response. After completing your response, click the post reply button. You will then see that your response has been added to the discussion. I hope this video helped you understand how to complete a discussion post for your NCVPS class."
+},
+{
+"title":"Viewing Teacher Announcements",
+"video":"https://drive.google.com/file/d/1O_iSVZaxO4FZLHJddVHjrhDc2N2TI-1T/view?usp=sharing",
+"transcript":"In this video, we'll explain how to view teacher announcements for courses. To begin, log in to your NCVPS dashboard through the link ncvps.instructure.com. Upon logging in, you'll see a page similar to mine. To view announcements for the course, first click on the course title. This will take you to the home page of that course. You will see your most recent announcements at the top of the page. To see more announcements, though, click on the announcements page. This will show you the list of announcements by the teacher of this course. To view an individual announcement and its contents, click on the title. I hope this tutorial helped you understand how to view teacher announcements."
+},
+{
+"title":"Clearing Cache in Google Chrome",
+"video":"https://drive.google.com/open?id=1ySoItgcviZ6qG72GKMRq2GJTPky3aPFV",
+"transcript":"Today, you are going to be learning how to clear cache in Google Chrome. The easiest way to do this is to clear the local cache by pressing control shift j. This opens the JavaScript console. From here, you need to make sure this is set on laptop since that's the average screen size for the device that you will be using for your courses, but if you have a larger laptop, you will probably want to press laptop large, if you have a tablet, you will want to press tablet, and if you have a mobile device, you will want to press either mobile large, mobile medium, or mobile small. So, for this one, we are just going to click laptop since that's the size of my device. With this, you then press and hold the reload button and click empty cache and hard reload. Then, to continue your course, you'll want to exit out of the JavaScript console. Sometimes, though, administrators block this due to security reasons. Then, you'll want to press control h. From here, you click clear browsing data. Make sure that cached images and files is clicked and make sure that the time range is all time. Then you'll click clear data and then, your cache will be cleared so that you can use any program that needs the cache to be cleared so it will actually work. And that's how you clear cache on Google Chrome."
+}
+];

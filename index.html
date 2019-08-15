@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+NCVPS PTC Tech Support AI
+</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+
+<script src="require.js"></script>
+<script>
+var data = JSON.parse(require('data.json'));
+
+
+</script>
+
+<style> 
+input[type=text] {
+  
+  border:none;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+flex-grow: 9
+}
+
+#search {
+width:100%;
+display:flex;
+box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+}
+
+input[type=text]:focus {
+ 
+}
+.material-icons {
+font-size:32px;
+flex-grow: 1;
+text-align:center;
+}
+.flex-container {
+display:flex;
+justify-content: center;
+}
+
+button:disabled {
+  cursor: not-allowed;
+
+}
+</style>
+</head>
+<body>
+<h1 style="text-align:center">NCVPS PTC Tech Support AI</h1>
+<div class="flex-container">
+<div id="search">
+<input type="text" name="search" id="txt" placeholder="Search.."><button class="material-icons" id="voice_search">mic</button>
+</div>
+</div>
+<script src="dataGet.js"></script>
+<script src="search.js"></script>
+<script>
+if(data == "error") {
+data = data_backup;
+
+}
+
+/*function search(s) {
+alert(s);
+}*/
+
+document.getElementById('txt').addEventListener("keydown",function(e){
+if(e.key=="Enter") {
+search(document.getElementById('txt').value);
+}
+});
+
+function triggerSearch(s) {
+document.getElementById("txt").value = s;
+var event = document.createEvent("Event");
+
+event.initEvent("keydown",true,true);
+event.key = "Enter";
+document.getElementById('txt').dispatchEvent(event);
+}
+
+document.getElementById('voice_search').disabled = (typeof(webkitSpeechRecognition)=="undefined");
+if(typeof(webkitSpeechRecognition)!="undefined") {
+// SpeakJS from https://github.com/amazinigmech2418/SpeakJS
+
+var langs = {
+english:"en",
+spanish:"es",
+africaans:"af",
+albanian:"sq",
+arabic:"ar",
+armenian:"hy",
+belarusian:"be",
+bengali:"bn",
+tibetan:"bo",
+bosnian:"bs",
+bulgarian:"bg",
+burmese:"my",
+czech:"cs",
+chinese:"zh",
+welsh:"cy",
+danish:"da",
+german:"de",
+dutch:"nl",
+greek:"el",
+estonian:"et",
+persian:"fa",
+finnish:"fi",
+french:"fr",
+gaelic:"gd",
+irish:"ga",
+hebrew:"he",
+hindi:"hi",
+hungarian:"hu",
+icelandic:"is",
+italian:"it",
+japanese:"ja",
+korean:"ko",
+latin:"la",
+mongolian:"mn",
+nepali:"ne",
+norwegian:"no",
+polish:"pl",
+portuguese:"pt",
+romanian:"ro",
+russian:"ru",
+swahili:"sw",
+sweedish:"sv",
+turkish:"tr",
+ukranian:"uk",
+vietnamese:"vi"
+};
+function recognize(callback,lang) {
+var speechdata = new webkitSpeechRecognition();
+speechdata.lang = lang;
+speechdata.onresult = callback;
+speechdata.start();
+}
+// This is not needed, but can be used as a callback to get the recognized speech into a variable.
+// Just use recognize(speechToVar,"en"); to get the recognized speech in English.
+var speechRecognized;
+function speechToVar(e) {
+speechRecognized = e.results;
+}
+var speak = function(text) {
+speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+};
+var getSpeech = function(text) {
+return (new SpeechSynthesisUtterance(text));
+};
+var speakWithSettings = function(text,lang,voice,volume,rate,pitch) {
+var z = (new SpeechSynthesisUtterance(text));
+z.lang = lang;
+z.voice = voice;
+z.volume = volume;
+z.rate = rate;
+z.pitch = pitch;
+  speechSynthesis.speak(z);
+
+};
+var speakLang = function(text,lang) {
+var z = (new SpeechSynthesisUtterance(text));
+z.lang = lang;
+    speechSynthesis.speak(z);
+
+};
+var speakSlow = function(text,speed) {
+speakWithSettings(text,"en",null,1,speed,speed);
+};
+var speakSlowLang = function(text,speed,lang) {
+speakWithSettings(text,lang,null,1,speed,speed);
+};
+
+function recognitionEvent(e) {
+triggerSearch(e.results[0][0].transcript);
+} 
+document.getElementById('voice_search').addEventListener('click',function() {
+recognize(recognitionEvent,"en");
+});
+
+
+}
+
+
+
+</script>
+</body>
+</html>

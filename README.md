@@ -1,2 +1,2 @@
-# ai
-Migrating tech-support-ai here to expand the service
+# tech-support-ai
+AI for the NCVPS Tech Support Program
