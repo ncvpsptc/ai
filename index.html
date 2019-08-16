@@ -13,7 +13,7 @@ NCVPS PTC AI - Home
     flex-grow: 1;
       text-align: center;
     }
-    button {
+    button:enabled {
     padding: 50px;
       border: none;
       border-radius: 0px;
@@ -26,7 +26,11 @@ NCVPS PTC AI - Home
     cursor: pointer;
     }
     button:disabled {
-    background-color: #e6e6e6
+      padding: 50px;
+      border: none;
+      border-radius: 0px;
+    background-color: #e6e6e6;
+    transition-duration: 0.4s;
     color: gray;
     cursor: not-allowed;
     }
