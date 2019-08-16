@@ -1,1 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: aqua;
+    background-image: linear-gradient(to bottom, white , aqua);
+}
 
+h1 {
+background-color: navy;
+  color: white;
+
+}
