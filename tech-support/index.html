@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--Title-->
     <title>
       NCVPS PTC AI - Tech Support
     </title>
+    <!--Metadata/Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Material Icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </link>
+    <!--Stylesheets-->
     <link rel="stylesheet" href="../css/style.css">
     </link>
+    <link rel="stylesheet" href="../css/ai.css"> 
+    </link>
+    <!--Load Data-->
     <script src="require.js"></script>
     <script src="get_data.js"></script>
     <script>
       let data = getDataFromURL('https://api.ncvpsptc.repl.co/ai/get');
     </script>
-    <link rel="stylesheet" href="style.css"> 
-    </link>
   </head>
   <body>
+    <!--Heading-->
     <h1 style="text-align:center">NCVPS PTC Tech Support AI</h1>
+    <!--Search Bar-->
     <div class="flex-container">
       <div id="search">
-        <input type="text" name="search" id="txt" placeholder="Search.."><button class="material-icons" id="voice_search">mic</button>
+        <input type="text" name="search" id="txt" placeholder="Search..."><button class="material-icons" id="voice_search">mic</button>
       </div>
     </div>
+    <!--Main JS-->
     <script src="search.js"></script>
     <script src="index.js"></script>
     <script src="voice_search.js"></script>
