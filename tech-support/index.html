@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>
-NCVPS PTC AI - Tech Support
-</title>
+  <head>
+    <title>
+      NCVPS PTC AI - Tech Support
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
-<link rel="stylesheet" href="../css/style.css"></link>
-<script src="require.js"></script>
-<script src="get_data.js"></script>
-<script>
-let data = getDataFromURL('https://api.ncvpsptc.repl.co/ai/get');
-</script>
-<style> 
-input[type=text] {
-  
-  border:none;
-  background-image: url('https://www.w3schools.com/css/searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-flex-grow: 9
-}
-
-#search {
-width:100%;
-display:flex;
-box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-}
-
-input[type=text]:focus {
- 
-}
-.material-icons {
-font-size:32px;
-flex-grow: 1;
-text-align:center;
-}
-.flex-container {
-display:flex;
-justify-content: center;
-}
-
-button:disabled {
-  cursor: not-allowed;
-
-}
-</style>
-</head>
-<body>
-<h1 style="text-align:center">NCVPS PTC Tech Support AI</h1>
-<div class="flex-container">
-<div id="search">
-<input type="text" name="search" id="txt" placeholder="Search.."><button class="material-icons" id="voice_search">mic</button>
-</div>
-</div>
-<script src="dataGet.js"></script>
-<script src="search.js"></script>
-<script src="index.js"></script>
-<script src="voice_search.js"></script>
-</body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </link>
+    <link rel="stylesheet" href="../css/style.css">
+    </link>
+    <script src="require.js"></script>
+    <script src="get_data.js"></script>
+    <script>
+      let data = getDataFromURL('https://api.ncvpsptc.repl.co/ai/get');
+    </script>
+    <style> 
+      input[type=text] {
+      border:none;
+      background-image: url('https://www.w3schools.com/css/searchicon.png');
+      background-position: 10px 10px; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+      flex-grow: 9
+      }
+      #search {
+      width:100%;
+      display:flex;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      }
+      input[type=text]:focus {
+      }
+      .material-icons {
+      font-size:32px;
+      flex-grow: 1;
+      text-align:center;
+      }
+      .flex-container {
+      display:flex;
+      justify-content: center;
+      }
+      button:disabled {
+      cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align:center">NCVPS PTC Tech Support AI</h1>
+    <div class="flex-container">
+      <div id="search">
+        <input type="text" name="search" id="txt" placeholder="Search.."><button class="material-icons" id="voice_search">mic</button>
+      </div>
+    </div>
+    <script src="dataGet.js"></script>
+    <script src="search.js"></script>
+    <script src="index.js"></script>
+    <script src="voice_search.js"></script>
+  </body>
 </html>
