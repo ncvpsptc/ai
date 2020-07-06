@@ -86,13 +86,10 @@ function getMin(arr) {
   };
 }
 
-const appendHTML = (_html, location) => {
-  const parser = new DOMParser();
-  const parse = n => parser.parseFromString(n, 'text/xml');
-  const html = `<div>${_html}</div>`;
-  let data = parse(html);
-  data = data.all[0].children;
-  Array.from(data).forEach(n => {location.appendChild(n)});
+const appendHTML = (html, location) => {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  location.appendChild(div);
 };
 
 const encodeData = data => {
