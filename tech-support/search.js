@@ -1,170 +1,147 @@
-function ignorePunctuation(txt) {
-var t = "";
-for(var i=0; i<txt.length; i++) {
-if(Array(",",".","!","?","-").indexOf(txt[i])==-1) {
-t+=txt[i];
-}
-}
-return t;
-}
+const ignorePunctuation = txt => txt.split('').filter(n => [",", ".", "!", "?", "-"].indexOf(n) == -1).join('');
 
-function splitWords(txt) {
-var split = txt.split(" ");
-for(i in split) {
-split[i] = split[i].toLowerCase();
-}
-return split
-}
+const splitWords = txt => txt.split(" ").map(n => n.toLowerCase());
 
-function checkArticle(word) {
-return Array("the",'a','to','and','is','you','i','how','do').indexOf(word)==-1;
-}
+const checkArticle = word => ['the', 'a', 'to', 'and', 'is', 'you', 'i', 'how', 'do'].indexOf(word) == -1;
 
-function ignoreArticles(split) {
-return split.filter(checkArticle);
-}
+const ignoreArticles = split => split.filter(checkArticle);
 
-function checkUsage(split,ref) {
-var uses = 0;
-var r = splitWords(ignorePunctuation(ref));
-for(i in split) {
-if(r.indexOf(split[i])!=-1) {
-uses++;
-}
-}
-return uses/split.length;
+function checkUsage(split, ref) {
+  let uses = 0;
+  let r = splitWords(ignorePunctuation(ref));
+  for(let i of split) {
+    if(r.indexOf(i) != -1) {
+      uses++;
+    }
+  }
+  return uses/split.length;
 }
 
 function titleSearch(split) {
-var max=0;
-var results = [];
-var resUsages = [];
-var max_holder;
-for(a in data) {
-
-var usage = checkUsage(split,data[a].title);
-var bool = (max<usage);
-if(bool) {
-max = checkUsage(split,data[a].title);
-max_holder = data[a];
-}
-if(usage>0) {
-results.push(data[a]);
-resUsages.push(usage)
-}
-}
-var rtrn = new Object();
-rtrn.max = max_holder;
-rtrn.res = new Array();
-for(i in results) {
-rtrn.res[i] = new Object();
-rtrn.res[i].obj = results[i];
-rtrn.res[i].usage = resUsages[i];
-}
-return rtrn;
+  let max = 0;
+  let results = [];
+  let resUsages = [];
+  let max_holder;
+  for(let a of data) {
+    let usage = checkUsage(split, a.title);
+    if(max < usage) {
+      max = usage;
+      max_holder = a;
+    }
+    if(usage>0) {
+      results.push(a);
+      resUsages.push(usage);
+    }
+  }
+  return {
+    max: max_holder,
+    res: results.map((_, i) => Object({
+      obj: results[i],
+      usage: resUsages[i]
+    }))
+  }
 }
 
 function contentSearch(split) {
-var max=0;
-var results = [];
-var resUsages = [];
-var max_holder;
-for(a in data) {
-
-var usage = checkUsage(split,data[a].title+" "+data[a].transcript);
-var bool = (max<usage);
-if(bool) {
-max = checkUsage(split,data[a].title+" "+data[a].transcript);
-max_holder = data[a];
-}
-if(usage>0) {
-results.push(data[a]);
-resUsages.push(usage)
-}
-}
-var rtrn = new Object();
-rtrn.max = max_holder;
-rtrn.res = new Array();
-for(i in results) {
-rtrn.res[i] = new Object();
-rtrn.res[i].obj = results[i];
-rtrn.res[i].usage = resUsages[i];
-}
-return rtrn;
+  let max = 0;
+  let results = [];
+  let resUsages = [];
+  let max_holder;
+  for(let a of data) {
+    let usage = checkUsage(split, a.title + " " + a.transcript);
+    if(max < usage) {
+      max = usage;
+      max_holder = a;
+    }
+    if(usage > 0) {
+      results.push(a);
+      resUsages.push(usage);
+    }
+  }
+  return {
+    max: max_holder,
+    res: results.map((_, i) => Object({
+      obj: results[i],
+      usage: resUsages[i]
+    }))
+  }
 }
 
 function getMin(arr) {
-var min = 100;
-var mins = [];
-for(z in arr) {
-if(arr[z].usage<min) {
-min = arr[z].usage;
-//mins.push(arr[z].obj)
+  let min = Infinity;
+  let mins = [];
+  for(let z of arr) {
+    if(z.usage < min) {
+      min = z.usage;
+    }
+  }
+  for(let z of arr) {
+    if(z.usage <= min) {
+      mins.push(z.obj);
+    }
+  }
+  return {
+    obj: mins,
+    usage:min
+  };
 }
-}
-for(z in arr) {
-if(arr[z].usage<=min) {
-min = arr[z].usage;
-mins.push(arr[z].obj);
-}
-}
-return {obj:mins,usage:min};
-}
+
+const appendHTML = (_html, location) => {
+  const parser = new DOMParser();
+  const parse = n => parser.parseFromString(n, 'text/xml');
+  const html = `<div>${_html}</div>`;
+  let data = parse(html);
+  data = data.all[0].children;
+  Array.from(data).forEach(n => {location.appendChild(n)});
+};
+
+const encodeData = data => {
+  let p = document.createElement('p');
+  p.textContent = data;
+  return p.innerHTML;
+};
 
 
 function render(arr) {
-var a=arr;
-var results = [];
-while(a.length>0) {
-console.log(a);
-var d = getMin(a);
-console.log(d);
-results = d.obj.concat(results);
-a = a.filter(function(e){return e.usage!=d.usage});
-}
-for(x in results) {
-var y = document.createElement("A");
-y.innerHTML = results[x].title;
-y.href = results[x].video;
-var br = document.createElement('BR');
-document.getElementById('results').append(y,br);
-}
+  let a = arr;
+  let results = [];
+  while(a.length > 0) {
+    let d = getMin(a);
+    results = d.obj.concat(results);
+    a = a.filter(n => n.usage != d.usage);
+  }
+  for(let x of results) {
+    appendHTML(`
+    <a href="${x.video}">${encodeData(x.title)}</a>
+    `, document.getElementById('results'));
+    /*let y = document.createElement("A");
+    y.textContent = x.title;
+    y.href = x.video;
+    let br = document.createElement('BR');
+    document.getElementById('results').append(y,br);*/
+  }
 }
 
-var resultsDiv = document.createElement("div");
-resultsDiv.setAttribute('id','results');
-document.body.appendChild(resultsDiv);
+appendHTML('<div id="results"></div>', document.body);
+
 function search(s) {
-document.getElementById('results').innerHTML="";
-var txt = ignorePunctuation(s);
-var split = splitWords(txt);
-split = ignoreArticles(split);
-if(contentSearch(split).res.length>0 && (contentSearch(split).res)){
-var p = document.createElement('P');
-p.innerHTML = "Best Result:"
-document.getElementById('results').appendChild(p);
-var link = document.createElement('A');
-link.href = contentSearch(split).max.video;
-link.innerHTML = contentSearch(split).max.title;
-document.getElementById('results').appendChild(link);
-var p = document.createElement('P');
-p.innerHTML = "Total Results:"
-document.getElementById('results').appendChild(p);
-render(contentSearch(split).res);
-var p = document.createElement('P');
-var a = document.createElement('A');
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLSeulMhD4xrkv0ocT3aDNu-wf-Qb6OiaBY1UH-jQHIlD8fX5dQ/viewform";
-a.innerHTML = "request a video to be made.";
-p.innerHTML = "If you couldn't find what you needed please ";
-p.appendChild(a);
-document.getElementById('results').appendChild(p);
-} else {
-var p = document.createElement('P');
-var a = document.createElement('A');
-a.href = "https://docs.google.com/forms/d/e/1FAIpQLSeulMhD4xrkv0ocT3aDNu-wf-Qb6OiaBY1UH-jQHIlD8fX5dQ/viewform";
-a.innerHTML = "request a video to be made.";
-p.innerHTML = "Sorry. No videos match your search. Please try again or ";
-p.appendChild(a);
-document.getElementById('results').appendChild(p);
-}
+  document.getElementById('results').innerHTML="";
+  let txt = ignorePunctuation(s);
+  let split = splitWords(txt);
+  split = ignoreArticles(split);
+  if(contentSearch(split).res.length > 0 && (contentSearch(split).res)) {
+    appendHTML(`
+    <p>Best Result:</p>
+    <a href="${contentSearch(split).max.video}">${contentSearch(split).max.title}</a>
+    <p>Total Results:</p>
+    `, document.getElementById('results'));
+    render(contentSearch(split).res);
+    appendHTML(`
+    <p>If you couldn't find what you needed please <a href="https://docs.google.com/forms/d/e/1FAIpQLSeulMhD4xrkv0ocT3aDNu-wf-Qb6OiaBY1UH-jQHIlD8fX5dQ/viewform">request a video to be made.</a></p>
+    `, document.getElementById('results'));
+  } else {
+    appendHTML(`
+    <p>Sorry. No videos match your search. Please try again or <a href="https://docs.google.com/forms/d/e/1FAIpQLSeulMhD4xrkv0ocT3aDNu-wf-Qb6OiaBY1UH-jQHIlD8fX5dQ/viewform">request a video to be made.</a></p>
+    `, document.getElementById('results'));
+  }
 }
