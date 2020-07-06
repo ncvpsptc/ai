@@ -11,4 +11,3 @@ function triggerSearch(s) {
   event.key = "Enter";
   document.getElementById('txt').dispatchEvent(event);
 }
-
