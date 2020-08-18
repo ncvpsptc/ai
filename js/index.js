@@ -4,7 +4,7 @@ import { createTrigger } from "./ai.js"
 import { enableVoiceSearch } from "./voice_search.js"
 
 
-export default function startAI(url) {
+export function startAI(url) {
   const data = get(url);
   const search = s => search(s, data);
   enableVoiceSearch(createTrigger(search));
