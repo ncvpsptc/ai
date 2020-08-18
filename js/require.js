@@ -1,4 +1,4 @@
-function require(url) {
+export default function require(url) {
   let rtrn;
   let xhr = new XMLHttpRequest();
   xhr.open("GET", url, false);
