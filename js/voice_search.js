@@ -1,7 +1,7 @@
 document.getElementById('voice_search').disabled = (typeof(webkitSpeechRecognition)=="undefined");
 
 
-export default function enableVoiceSearch(triggerSearch) {
+export function enableVoiceSearch(triggerSearch) {
   if(typeof(webkitSpeechRecognition)!="undefined") {
     // Derived from SpeakJS (https://github.com/amazinigmech2418/SpeakJS)
     const recognize = (callback,lang) => {
