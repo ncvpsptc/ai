@@ -1,4 +1,4 @@
-import { require } from "./require.js"
+import { require } from "./require.mjs"
 
 export default function get(url) {
   const _d = require(url).split('\n').map(i => i.split(','));
