@@ -1,6 +1,6 @@
-import { require } from "./require.mjs"
+import { require } from "./require.js"
 
-export default function get(url) {
+export function get(url) {
   const _d = require(url).split('\n').map(i => i.split(','));
   let d = [];
   for(let i=1; i<_d.length; i++) {
