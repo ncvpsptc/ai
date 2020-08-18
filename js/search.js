@@ -121,7 +121,7 @@ function render(arr) {
 
 appendHTML('<div id="results"></div>', document.body);
 
-export default function search(s, data) {
+export function search(s, data) {
   document.getElementById('results').innerHTML="";
   let txt = ignorePunctuation(s);
   let split = splitWords(txt);
