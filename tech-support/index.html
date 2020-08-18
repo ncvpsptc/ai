@@ -15,12 +15,6 @@
     </link>
     <link rel="stylesheet" href="../css/ai.css"> 
     </link>
-    <!--Load Data-->
-    <script src="../js/require.js"></script>
-    <script src="../js/get_data.js"></script>
-    <script>
-      let data = getDataFromURL('https://api.ncvpsptc.repl.co/ai/get');
-    </script>
   </head>
   <body>
     <!--Heading-->
@@ -32,8 +26,9 @@
       </div>
     </div>
     <!--Main JS-->
-    <script src="../js/search.js"></script>
-    <script src="../js/ai.js"></script>
-    <script src="../js/voice_search.js"></script>
+    <script type="module">
+      import { startAI } from "../js/index.js"
+      startAI("https://api.ncvpsptc.repl.co/ai/get");
+    </script>
   </body>
 </html>

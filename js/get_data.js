@@ -1,4 +1,6 @@
-function getDataFromURL(url) {
+import { require } from "./require.js"
+
+export function get(url) {
   const _d = require(url).split('\n').map(i => i.split(','));
   let d = [];
   for(let i=1; i<_d.length; i++) {

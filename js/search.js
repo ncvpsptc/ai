@@ -17,7 +17,7 @@ function checkUsage(split, ref) {
   return uses/split.length;
 }
 
-function titleSearch(split) {
+function titleSearch(split, data) {
   let max = 0;
   let results = [];
   let resUsages = [];
@@ -42,7 +42,7 @@ function titleSearch(split) {
   }
 }
 
-function contentSearch(split) {
+function contentSearch(split, data) {
   let max = 0;
   let results = [];
   let resUsages = [];
@@ -121,18 +121,18 @@ function render(arr) {
 
 appendHTML('<div id="results"></div>', document.body);
 
-function search(s) {
+export function search(s, data) {
   document.getElementById('results').innerHTML="";
   let txt = ignorePunctuation(s);
   let split = splitWords(txt);
   split = ignoreArticles(split);
-  if(contentSearch(split).res.length > 0 && (contentSearch(split).res)) {
+  if(contentSearch(split, data).res.length > 0 && (contentSearch(split, data).res)) {
     appendHTML(`
     <p>Best Result:</p>
-    <a href="${contentSearch(split).max.video}">${contentSearch(split).max.title}</a>
+    <a href="${contentSearch(split, data).max.video}">${contentSearch(split, data).max.title}</a>
     <p>Total Results:</p>
     `, document.getElementById('results'));
-    render(contentSearch(split).res);
+    render(contentSearch(split, data).res);
     appendHTML(`
     <p>If you couldn't find what you needed please <a href="https://docs.google.com/forms/d/e/1FAIpQLSeulMhD4xrkv0ocT3aDNu-wf-Qb6OiaBY1UH-jQHIlD8fX5dQ/viewform">request a video to be made.</a></p>
     `, document.getElementById('results'));
